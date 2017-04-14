@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.basic.springboot</groupId>
+    <artifactId>busstation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hibernate.version>4.0.0.Final</hibernate.version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.3.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <!-- 添加Spring-Boot-data-jpa 框架让springboot支持数据库映射以及数据库的操作功能-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- 添加mysql连接的库，用来连接mysql数据库-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!--Hibernate 空间数据库-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-spatial</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+    <!--Hibernate 二级缓存-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>4.0.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ol4jsf</groupId>
+            <artifactId>ol4jsf-core</artifactId>
+            <version>
+                2.6.1
+            </version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!-- add repositories for JTS and Hibernate Spatial and Hibernate (JBoss) -->
+    <repositories>
+        <repository>
+            <id>OSGEO GeoTools repo</id>
+            <url>http://download.osgeo.org/webdav/geotools</url>
+        </repository>
+        <repository>
+            <id>Hibernate Spatial repo</id>
+            <url>http://www.hibernatespatial.org/repository</url>
+        </repository>
+        <!-- add JBOSS repository for easy access to Hibernate libraries -->
+        <repository>
+            <id>JBOSS</id>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+</project>

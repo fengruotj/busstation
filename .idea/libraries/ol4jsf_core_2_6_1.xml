@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ol4jsf-core-2.6.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/libs/ol4jsf-core-2.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
